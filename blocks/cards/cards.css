@@ -1,6 +1,3 @@
-/* Disable the no-descending-specificity rule globally */
-/* stylelint-disable no-descending-specificity */
-
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -33,8 +30,6 @@
   background: #f7f8f5;
   padding: 0;
 }
-
-/* Grid layout */
 .cards.cards33 > ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,8 +45,6 @@
     gap: 16px 0;
   }
 }
-
-/* Card container */
 .cards.cards33 > ul > li {
   display: flex;
   flex-direction: row;
@@ -69,8 +62,6 @@
 .cards.cards33 > ul > li:hover {
   box-shadow: 0 4px 16px rgb(30 32 37 / 13%);
 }
-
-/* Image area */
 .cards.cards33 .cards-card-image {
   flex: 0 0 38%;
   max-width: 38%;
@@ -91,8 +82,6 @@
   display: block;
   margin: 0;
 }
-
-/* Text area */
 .cards.cards33 .cards-card-body {
   flex: 1 1 62%;
   padding: 22px 20px 16px 22px;
@@ -105,8 +94,6 @@
   margin: 0;
   height: 100%;
 }
-
-/* Top row: pill + time */
 .cards.cards33 .cards-card-body p:first-child {
   display: inline-block;
   background: #e6e6e6;
@@ -141,14 +128,10 @@
 .cards.cards33 .cards-card-body p:first-child + p {
   margin-left: 0;
 }
-
-/* Keep label and time on the same line */
 .cards.cards33 .cards-card-body p:first-child,
 .cards.cards33 .cards-card-body p:first-child + p {
   margin-bottom: 0.7em;
 }
-
-/* Title */
 .cards.cards33 .cards-card-body h3 {
   font-family: Montserrat, "Instrument Sans", Arial, sans-serif;
   font-size: 1.27rem;
@@ -159,8 +142,6 @@
   text-transform: uppercase;
   line-height: 1.12;
 }
-
-/* Description */
 .cards.cards33 .cards-card-body h3 + p {
   color: #676767;
   font-size: 1rem;
@@ -168,8 +149,6 @@
   font-weight: 400;
   line-height: 1.45;
 }
-
-/* "Read" link */
 .cards.cards33 .cards-card-body .button-container {
   margin: 0;
   padding: 0;
@@ -201,8 +180,6 @@
   background: none;
   text-decoration: underline;
 }
-
-/* Responsive: stack image above text for smaller screens */
 @media (width <= 600px) {
   .cards.cards33 > ul > li {
     flex-direction: column;
@@ -225,4 +202,87 @@
   .cards.cards33 .cards-card-body {
     padding: 16px 12px 12px 16px;
   }
+}
+
+
+.cards {
+  /* Refined padding for even vertical centering */
+  padding: 56px 0;
+  background: #fff;
+}
+
+.cards > ul {
+  /* Slightly narrower and more balanced container than before */
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 40px 56px; /* 40px row gap, 56px column gap for airy but balanced look */
+  list-style: none;
+  background: #fff;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1100px) {
+  .cards > ul {
+    max-width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 32px 28px;
+    padding: 0 16px;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 700px) {
+  .cards > ul {
+    max-width: 420px;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 24px 0;
+    padding: 0 8px;
+  }
+}
+
+.cards > ul > li {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: flex-start;
+  max-width: 320px; /* Encourage best text line length and wrapping */
+  width: 100%;
+}
+
+.cards .cards-card-body {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.cards .cards-card-body p {
+  color: #222222;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  text-align: left;
+  max-width: 32ch; /* Optimal readable line length */
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.cards-wrapper {
+  margin: 0;
+  padding: 0;
+  background: #fff;
 }
